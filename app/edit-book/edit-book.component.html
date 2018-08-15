@@ -1,0 +1,28 @@
+
+
+<div class="container">
+
+  <h1>
+    {{(localParam)?"Edit ": "Add "}} Book
+  </h1>
+
+  <div class="well well-lg" *ngIf="actionMsg">{{actionMsg}}</div>
+
+  <div class="form-group">
+    <label>BookName:</label>
+    <input type="text" class="form-control"  placeholder="Enter BookName" [(ngModel)]="localBook.BookName">
+  </div>
+  <div class="form-group">
+      <label>BookPrice:</label>
+      <input type="number" class="form-control"  placeholder="Enter BookPrice"  [(ngModel)]="localBook.BookPrice">
+    </div>
+
+
+    <label>Author list:</label>
+    <select class="form-control" #author (change)="saveAuthor(author.value)">
+      <option *ngFor="let author of authorStore.authorList" >{{author.AuthorName}}</option>
+    </select>
+
+  <button class="btn btn-default" (click)="saveChanges()">Submit</button>
+<h1>{{localBook.BookName}}</h1>
+</div>

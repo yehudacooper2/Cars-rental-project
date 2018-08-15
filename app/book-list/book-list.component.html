@@ -1,0 +1,58 @@
+
+<div class="container">
+    
+
+  <div class="well well-lg" *ngIf="actionMsg">{{actionMsg}}</div>
+
+  <hr/>
+  <hr/>
+  <hr/>
+  
+  <h1>Our books:</h1>
+  
+  <a class="btn btn-primary" routerLink="/addBook">Add new Book</a>
+  <hr/>
+  <div class="row">
+
+      <div class="col-md-3 book-container" *ngFor="let book of bookStore.bookList">
+          <div class="thumbnail">
+
+              <div class="caption">
+
+                  <h2>{{book.BookName}}</h2>
+                  <hr/>
+
+               
+                  <p>Price: {{book.BookPrice}}</p>
+                  <p>Author:
+                      <span>{{book.Author.AuthorName}}</span>
+                  </p>
+
+                  <p>
+                    <a class="btn btn-primary" routerLink="/editBook/{{book.BookName}}">Edit Book</a>
+                    <a class="btn btn-primary" routerLink="/book"  (click)="showBook(book.BookName)">Show details</a>
+                    <a class="btn btn-primary" (click)="deleteBook(book.BookName)">Delete Book</a>
+                </p>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  >
+</div>

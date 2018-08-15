@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Our Authors:</h1>
+  
+  <hr/>
+  <div class="row">
+
+      <div class="col-md-3 book-container" *ngFor="let author of authorStore.authorList">
+          <div class="thumbnail">
+
+              <div class="caption">
+
+                  <h2>{{author.AuthorName}}</h2>
+                  <hr/>
+
+               
+                  <p>Age: {{author.AuthorAge}}</p>
+
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>

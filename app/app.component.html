@@ -1,0 +1,35 @@
+
+<div id="myPage" data-offset="50">
+
+
+  <!--Header-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a routerLink="/books">BOOKS</a>
+          </li>
+          <li>
+            <a routerLink="/authors">AUTHORS</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Main-->
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <br>
+    <br>
+    <p>&copy; Made By {{adminName}} - {{currentYear}}</p>
+  </footer>
+
+
+</div>

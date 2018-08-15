@@ -1,0 +1,62 @@
+
+<div class="container">
+    
+
+  <div class="well well-lg" *ngIf="actionMsg">{{actionMsg}}</div>
+
+  <hr/>
+  <hr/>
+  <hr/>
+  
+  <h1>Our users:</h1>
+  
+  <a class="btn btn-primary" routerLink="/addUser">Add new User</a>
+  <hr/>
+  <div class="row">
+
+      <div class="col-md-3 book-container" *ngFor="let user of userStore.userList">
+          <div class="thumbnail">
+
+              <div class="caption">
+
+                  <h2>{{user.UserName}}</h2>
+                  <hr/>
+
+               
+                  <p>FullName: {{user.UserFullName}}</p>
+                  <p>Password: {{user.UserPassword}}
+                  </p>
+                  <p>IdentityNumber: {{user.UserIdentityNumber}}</p>
+                  <p>Gender: {{user.UserGender}}</p>
+                  <p>Email: {{user.UserEmail}}</p>
+                  <p>BirthDay: {{user.UserBirthDay}}</p>
+                  <p>Role: {{user.UserRole}}</p>
+                  <p>Image: {{user.UserImage}}</p>
+                  <p>
+                    <a class="btn btn-primary" routerLink="/editUser/{{user.UserName}}">Edit User</a>
+                    <a class="btn btn-primary" routerLink="/user"  (click)="showUser(user.UserName)">Show details</a>
+                    <a class="btn btn-primary" (click)="deleteUser(user.UserName)">Delete User</a>
+                </p>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  <hr/>
+  
+</div>
