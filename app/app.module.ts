@@ -15,6 +15,9 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserService } from './shared/services/user.service';
+import { CarTypeListComponent } from './car-type-list/car-type-list.component';
+import { EditCarTypeComponent } from './edit-car-type/edit-car-type.component';
+import { CarTypeService } from './shared/services/carType.service';
 
 
 
@@ -28,9 +31,13 @@ const appRoutes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: 'addUser', component: EditUserComponent},
   { path: 'editUser/:userName', component: EditUserComponent},
+  { path: 'carTypes', component: CarTypeListComponent },
+  { path: 'addCarType', component: EditCarTypeComponent},
+  { path: 'editCarType/:carModel', component: EditCarTypeComponent},
+
   // default path - will redirect the current path to 'books'
   { path: '',
-    redirectTo: '/users',
+    redirectTo: '/carTypes',
     pathMatch: 'full'
   },
  // ** is an angular placeholder for any path that does not exist
@@ -47,7 +54,9 @@ const appRoutes: Routes = [
     SingleBookComponent,
     EditBookComponent,
     UserListComponent,
-    EditUserComponent
+    EditUserComponent,
+    CarTypeListComponent,
+    EditCarTypeComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +66,7 @@ const appRoutes: Routes = [
 
   ],
   providers: [
+    CarTypeService,
     UserService,
     BookService,
     AuthorService
