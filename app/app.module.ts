@@ -18,6 +18,10 @@ import { UserService } from './shared/services/user.service';
 import { CarTypeListComponent } from './car-type-list/car-type-list.component';
 import { EditCarTypeComponent } from './edit-car-type/edit-car-type.component';
 import { CarTypeService } from './shared/services/carType.service';
+import { CarListComponent } from './car-list/car-list.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
+import { BranchService } from './shared/services/branch.service';
+import { CarService } from './shared/services/car.service';
 
 
 
@@ -34,10 +38,12 @@ const appRoutes: Routes = [
   { path: 'carTypes', component: CarTypeListComponent },
   { path: 'addCarType', component: EditCarTypeComponent},
   { path: 'editCarType/:carModel', component: EditCarTypeComponent},
-
+  { path: 'cars', component: CarListComponent },
+  { path: 'addCar', component: EditCarComponent},
+  { path: 'editCar/:carNumber', component: EditCarComponent},
   // default path - will redirect the current path to 'books'
   { path: '',
-    redirectTo: '/carTypes',
+    redirectTo: '/cars',
     pathMatch: 'full'
   },
  // ** is an angular placeholder for any path that does not exist
@@ -56,7 +62,9 @@ const appRoutes: Routes = [
     UserListComponent,
     EditUserComponent,
     CarTypeListComponent,
-    EditCarTypeComponent
+    EditCarTypeComponent,
+    CarListComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +74,8 @@ const appRoutes: Routes = [
 
   ],
   providers: [
+    CarService,
+    BranchService,
     CarTypeService,
     UserService,
     BookService,
