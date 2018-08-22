@@ -1,7 +1,7 @@
 import { Car } from './car.model';
 import { User } from './user.model';
 
-export interface Order {
+export class Order {
     OrderStartDate: Date;
     OrderReturnDate: Date;
     OrderActualReturnDate: Date;

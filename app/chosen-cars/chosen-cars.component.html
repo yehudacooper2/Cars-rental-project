@@ -1,0 +1,48 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="form-group row">
+    <div class="col-xs-12">
+      <br>
+      <input class="form-control" id="ex2" type="text" placeholder="Enter model:"  [(ngModel)]="localCarModel">
+      <a class="btn btn-primary"   (click)="chooseGear()">Show cars</a>
+      
+    </div>
+  </div> 
+
+  
+  <hr/>
+  <div class="row">
+
+      <div class="col-md-3 book-container" *ngFor="let car of chosenCarArray">
+          <div class="thumbnail">
+
+              <div class="caption">
+
+                  <h2>{{car.CarNumber}}</h2>
+                  <hr/>
+
+               
+                  <p>CurrentKilometerage: {{car.CarCurrentKilometerage}}</p>
+                  <p>Is-fit-for-rental:
+                      <span>{{car.CarIsFitForRental}}</span>
+                  </p>
+                   <p>Car-Image: {{car.CarImage}}</p>
+                   <p>Car-Type: {{car.CarType.Model}}</p>
+                   <p>CarBranch: {{car.CarBranch.BranchName}}</p>
+                   <p></p>
+                   <p>
+                    <a class="btn btn-primary" routerLink="/car"  (click)="showCar(car.CarNumber)">Show details</a>
+                </p>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <hr/>
+  <hr/>
+</div>

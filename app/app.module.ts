@@ -22,6 +22,14 @@ import { CarListComponent } from './car-list/car-list.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
 import { BranchService } from './shared/services/branch.service';
 import { CarService } from './shared/services/car.service';
+import { OrderListComponent } from './order-list/order-list.component';
+import { EditOrderComponent } from './edit-order/edit-order.component';
+import { OrderService } from './shared/services/order.service';
+import { HeaderComponent } from './header/header.component';
+import { RegisterComponent } from './register/register.component';
+import { ChosenCarsComponent } from './chosen-cars/chosen-cars.component';
+import { SingleCarComponent } from './single-car/single-car.component';
+import { OrderCarComponent } from './order-car/order-car.component';
 
 
 
@@ -41,9 +49,19 @@ const appRoutes: Routes = [
   { path: 'cars', component: CarListComponent },
   { path: 'addCar', component: EditCarComponent},
   { path: 'editCar/:carNumber', component: EditCarComponent},
+  { path: 'orders', component: OrderListComponent },
+  { path: 'addOrder', component: EditOrderComponent},
+  { path: 'editOrder/:carNumber', component: EditOrderComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'chosenCars', component: ChosenCarsComponent},
+  { path: 'car', component: SingleCarComponent},
+  { path: 'orderCar', component: OrderCarComponent},
+
+
+
   // default path - will redirect the current path to 'books'
   { path: '',
-    redirectTo: '/cars',
+    redirectTo: '/orders',
     pathMatch: 'full'
   },
  // ** is an angular placeholder for any path that does not exist
@@ -64,7 +82,14 @@ const appRoutes: Routes = [
     CarTypeListComponent,
     EditCarTypeComponent,
     CarListComponent,
-    EditCarComponent
+    EditCarComponent,
+    OrderListComponent,
+    EditOrderComponent,
+    HeaderComponent,
+    RegisterComponent,
+    ChosenCarsComponent,
+    SingleCarComponent,
+    OrderCarComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +99,7 @@ const appRoutes: Routes = [
 
   ],
   providers: [
+    OrderService,
     CarService,
     BranchService,
     CarTypeService,
