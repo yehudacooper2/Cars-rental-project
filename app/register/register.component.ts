@@ -34,7 +34,11 @@ actionMsg: string;
     const callback = (bool: boolean) => {this.actionMsg = (bool) ? 'action success' : 'action fail'; } ;
     this.localUser.UserRole = 'user';
     // tslint:disable-next-line:max-line-length
+    if (this.localUser.UserFullName == null || this.localUser.UserPassword == null) {
+      this.actionMsg = 'please enter all fields';
+    } else {
     (this.myUserService.addUser(this.localUser, callback)) ;
+    }
   }
 
 

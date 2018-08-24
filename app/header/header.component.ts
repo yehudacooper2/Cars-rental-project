@@ -11,7 +11,6 @@ import { User } from '../shared/models/user.model';
 })
 export class HeaderComponent implements OnInit {
 
-
   userStore: UserStore;
   localUserName: string;
   localUser: User;
@@ -19,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.userStore = this.myUserService.userInfo;
+
   }
   chooseUser(userName: string): void {
   //  if (this.userStore.userList.find(x => x.UserName === this.localUserName && x.UserRole === 'manager')) {
@@ -27,5 +27,6 @@ export class HeaderComponent implements OnInit {
      this.localUser = this.userStore.userList.find(x => x.UserName === this.localUserName);
   //  }
   }
+
 
 }

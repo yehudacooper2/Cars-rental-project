@@ -30,6 +30,10 @@ import { RegisterComponent } from './register/register.component';
 import { ChosenCarsComponent } from './chosen-cars/chosen-cars.component';
 import { SingleCarComponent } from './single-car/single-car.component';
 import { OrderCarComponent } from './order-car/order-car.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { HomeComponent } from './home/home.component';
+import { SingleOrderComponent } from './single-order/single-order.component';
+import { CarReturnComponent } from './car-return/car-return.component';
 
 
 
@@ -56,12 +60,19 @@ const appRoutes: Routes = [
   { path: 'chosenCars', component: ChosenCarsComponent},
   { path: 'car', component: SingleCarComponent},
   { path: 'orderCar', component: OrderCarComponent},
+  { path: 'userOrders', component: UserOrdersComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'order', component: SingleOrderComponent},
+  { path: 'carReturn', component: CarReturnComponent},
+
+
+
 
 
 
   // default path - will redirect the current path to 'books'
   { path: '',
-    redirectTo: '/orders',
+    redirectTo: '/carReturn',
     pathMatch: 'full'
   },
  // ** is an angular placeholder for any path that does not exist
@@ -89,7 +100,11 @@ const appRoutes: Routes = [
     RegisterComponent,
     ChosenCarsComponent,
     SingleCarComponent,
-    OrderCarComponent
+    OrderCarComponent,
+    UserOrdersComponent,
+    HomeComponent,
+    SingleOrderComponent,
+    CarReturnComponent,
   ],
   imports: [
     BrowserModule,

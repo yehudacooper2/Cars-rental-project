@@ -6,7 +6,7 @@
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  adminName = 'Meir';
+  adminName = ' Yehuda-Cooper';
   currentYear = new Date().getFullYear();
 }
 
