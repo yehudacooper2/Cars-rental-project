@@ -11,32 +11,36 @@
                     </div>
                   </div> 
             </li>
+           <li>
+              <a *ngIf=" userStore.singleUser.UserRole== undefined"   routerLink="/register">REGISTER</a>
+          </li>
             <li>
-              <a *ngIf="localUser.UserRole=='user'" routerLink="/books">BOOKS</a>
+               <a *ngIf=" userStore.singleUser.UserRole== undefined || userStore.singleUser.UserRole== 'user' || userStore.singleUser.UserRole== 'worker' || userStore.singleUser.UserRole== 'manager'"   routerLink="/home">HOME</a>
+            </li>
+              <li>
+                <a *ngIf=" userStore.singleUser.UserRole== undefined ||  userStore.singleUser.UserRole== 'user'"   routerLink="/chosenCars">CHOOSE-CAR</a>
+                </li>
+              <li>
+                <a *ngIf=" userStore.singleUser.UserRole== undefined || userStore.singleUser.UserRole== 'manager' || userStore.singleUser.UserRole== 'user' || userStore.singleUser.UserRole== 'worker'"   routerLink="/home" (click)="logOut()">LOG-OUT</a>
+              </li>
+            <li>
+              <a *ngIf="userStore.singleUser.UserRole=='manager'" routerLink="/users">USERS-LIST</a>
             </li>
             <li>
-              <a routerLink="/authors">AUTHORS</a>
+              <a *ngIf="userStore.singleUser.UserRole=='manager'"routerLink="/cars">CARS-LIST</a>
             </li>
             <li>
-              <a *ngIf="localUser.UserRole=='manager'" routerLink="/users">USERS</a>
+              <a *ngIf="userStore.singleUser.UserRole=='manager'"routerLink="/carTypes">CAR-TYPES-LIST</a>
             </li>
             <li>
-              <a *ngIf="localUser.UserRole=='manager'"routerLink="/cars">CARS</a>
+              <a *ngIf="userStore.singleUser.UserRole=='manager'"routerLink="/orders">ORDERS-LIST</a>
             </li>
             <li>
-              <a *ngIf="localUser.UserRole=='manager'"routerLink="/carTypes">CAR-TYPES</a>
-            </li>
-            <li>
-              <a *ngIf="localUser.UserRole=='manager'"routerLink="/orders">ORDERS</a>
-            </li>
-            <li>
-              <a *ngIf="localUser.UserRole=='user' || localUser.UserRole=='manager' || localUser.UserRole=='anonimous'" routerLink="/login">LogIn</a>
-            </li>
-            <li>
-              <a routerLink="/register">REGISTER</a>
-            </li>
+                <a *ngIf="userStore.singleUser.UserRole=='worker'"routerLink="/carReturn">RETURN-CAR</a>
+              </li>
+            
              <li>
-              <a routerLink="/userOrders">SHOW-USERS-ORDERS</a>
+              <a *ngIf="userStore.singleUser.UserRole=='user'"routerLink="/userOrders">SHOW-USERS-ORDERS</a>
              
             </li>
           </ul>

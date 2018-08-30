@@ -25,16 +25,39 @@
       <input type="text" class="form-control"  placeholder="Enter Car-Image"  [(ngModel)]="localCar.CarImage">
     </div>
 
+  <!--  <div class="form-group">
+        <label>Car-Image:</label>
+        <input type="text" class="form-control"  placeholder="Enter Car-Type from bellow list"  [(ngModel)]="localCarType">
+      </div>
+    
+      <button class="btn btn-default" (click)="saveModel()">SubmitModel</button>-->
+
     <label>CarType list:</label>
     <select class="form-control" #carType (change)="saveCarType(carType.value)">
       <option *ngFor="let carType of carTypeStore.carTypeList" >{{carType.Model}}</option>
+      
     </select>
 
 
-    <label>Branch list:</label>
+     <label>Branch list:</label>
     <select class="form-control" #branchName (change)="saveBranch(branchName.value)">
       <option *ngFor="let branch of branchStore.branchList" >{{branch.BranchName}}</option>
-    </select>
+    </select> 
 
+ <!--    <label>Branch list:</label>
+    <input type="text" class="form-control"  placeholder="Enter Car-Branch from bellow list"  [(ngModel)]="localCar.CarBranch">
+    
+    <select class="form-control" >
+      
+      <option *ngFor="let branch of branchStore.branchList" >{{branch.BranchName}}</option>
+    </select> -->
+    
   <button class="btn btn-default" (click)="saveChanges()">Submit</button>
 </div>
+
+
+<!-- <select [(ngModel)]="selectedGame" required>
+   <option *ngFor="let game of games" [ngValue]="game" > {{game.name}} </option>
+</select>
+<label>Type:</label>
+<input type="type"name="type" [(ngModel)]="selectedGame.type"> -->

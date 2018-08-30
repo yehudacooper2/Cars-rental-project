@@ -3,6 +3,6 @@ export interface CarType {
     Model: string;
     DailyCost: number;
     DayDelayCost: number;
-    ManufactureYear: number;
+    ManufactureYear: any;
     Gear: boolean;
   }

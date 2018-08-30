@@ -16,7 +16,7 @@ import { BranchService } from '../shared/services/branch.service';
   styleUrls: ['./edit-car.component.css']
 })
 export class EditCarComponent implements OnInit {
-
+localCarType: string;
 carTypeStore: CarTypeStore;
 branchStore: BranchStore;
 actionMsg: string;
@@ -42,14 +42,25 @@ actionMsg: string;
 
   saveChanges() {
     const callback = (bool: boolean) => {this.actionMsg = (bool) ? 'action success' : 'action fail'; } ;
+   // this.localCar.CarType = this.localCar.CarType ;
     this.localCar.CarType = this.localCar.CarType || this.carTypeStore.carTypeList[0];
 
+    // this.localCar.CarBranch = this.localCar.CarBranch ;
+  //  this.localCar.CarBranch = this.localCar.CarBranch ;
     this.localCar.CarBranch = this.localCar.CarBranch || this.branchStore.branchList[0];
+
 
     // tslint:disable-next-line:max-line-length
     (this.localParam) ? this.myCarService.editCar(this.localCar, this.localParam, callback) : this.myCarService.addCar(this.localCar, callback) ;
   }
-
+/* saveModel() {
+  for (let i = 0 ; i < this.carTypeStore.carTypeList.length; i++) {
+    if (this.carTypeStore.carTypeList[i].Model === this.localCarType) {
+      this.localCar.CarType = this.carTypeStore.carTypeList[i];
+    }
+  //  }
+  }
+} */
 
   saveCarType(model: string) {
     this.localCar.CarType = this.carTypeStore.carTypeList.find(x => x.Model === model);

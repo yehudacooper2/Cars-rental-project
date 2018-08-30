@@ -19,13 +19,13 @@ export class UserService {
 
     // GET : get all books from server (and save the returned value to a property in this service)
     getUsers(): void {
-        this.myHttpClient.get(this.link)
+        this.myHttpClient.get(this.link , { headers: {'Authorization': 'yehuda 123' }})
             .subscribe((x: Array<User>) => { this.userInfo.userList = x; });
     }
 
     // GET : get a specific book (by bookName) from server (and save the returned value to a property in this service)
     getUser(userName: string): void {
-        this.myHttpClient.get(`${this.link}?userName=${userName}`)
+        this.myHttpClient.get(`${this.link}?userName=${userName}`, { headers: {'Authorization': 'yehuda 123' }})
             .subscribe((x: User) => { this.userInfo.singleUser = x; });
     }
 
