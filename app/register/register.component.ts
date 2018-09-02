@@ -34,6 +34,9 @@ actionMsg: string;
     const callback = (bool: boolean) => {this.actionMsg = (bool) ? 'action success' : 'action fail'; } ;
     this.localUser.UserRole = 'user';
     // tslint:disable-next-line:max-line-length
+    if (this.localUser.UserIdentityNumber.length !== 9) {
+      this.actionMsg = 'please enter identity number with 9 digits';
+    } else
     if (this.localUser.UserFullName == null || this.localUser.UserPassword == null) {
       this.actionMsg = 'please enter all fields';
     } else {
